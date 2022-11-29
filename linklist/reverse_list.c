@@ -29,6 +29,18 @@ ListNode reverse_list(ListNode head) {
     return cur_node;
 }
 
+ListNode reverse_list_recursive(ListNode head) {
+    if (head == NULL || head->next == NULL) {
+        return head;
+    }
+    ListNode temp_node = reverse_list_recursive(head->next);
+    head->next->next = head;
+    head->next = NULL;
+
+    return temp_node;
+}
+
+
 void print_node(ListNode head) {
     while (head)
     {
@@ -61,6 +73,7 @@ int main() {
     fifth->val = 5;
     fifth->next = NULL;
 
-    ListNode res = reverse_list(first);
+    // ListNode res = reverse_list(first);
+    ListNode res = reverse_list_recursive(first);
     print_node(res);
 }
