@@ -23,7 +23,11 @@ def reverse_list(head: ListNode) -> ListNode:
     cur_node.next = pre_node
     return cur_node
 
-
+# recursive flow:
+# A -> B -> C -> D
+# A -> B -> C <- D
+# A -> B <- C <- D
+# A <- B <- C <- D
 def reverse_list_recursive(head: ListNode) -> ListNode:
     if head is None or head.next is None:
         return head
