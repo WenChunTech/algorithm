@@ -1,0 +1,3 @@
+[submodule "datastruction"]
+	path = datastruction
+	url = git@github.com:fwc-git/datastruction.git
