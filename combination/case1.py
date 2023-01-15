@@ -39,10 +39,9 @@ def helper(arr: List[int], target: int, start: int, track: List[int]):
         final_result.append(track.copy())
         return
     while start < len(arr):
-        count += arr[start]
-        track_copy = track.copy()
-        track_copy.append(arr[start])
-        helper(arr, target, start, track_copy)
+        track.append(arr[start])
+        helper(arr, target, start, track)
+        track.pop()
         start += 1
 
 
